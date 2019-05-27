@@ -22,5 +22,10 @@ module.exports = {
     async store(req,res){
         const object = await Object.create(req.body);
         return res.json(object)
+    },
+
+    async edit(req,res){
+        const object = await Object.findOneAndUpdate({"_id":req.params.id}, req.body,{new:true});
+        return res.json(object)
     }
 }
