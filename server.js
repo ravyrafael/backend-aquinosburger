@@ -27,4 +27,4 @@ app.use('/api', require('./src/routes'));
 
 
 
-app.listen(process.env.PORT || 3001);
+app.listen(process.env.PORT);
