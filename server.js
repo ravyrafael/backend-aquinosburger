@@ -1,18 +1,22 @@
+require('dotenv').config();
 const express = require('express');
 const requireDir = require('require-dir');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+
+
 //Iniciando app
 const app = express();
 app.use(express.json());
 app.use(cors);
+
 //Iniciando Banco de dados
 mongoose.connect(
-    'mongodb+srv://Deploy:ekariuber321@personal-tracker-wlmph.mongodb.net/test?retryWrites=true'
+    `${process.env.MONGO_URL}`
 ,{ 
     useNewUrlParser: true,
-    dbName:'Personal-Tracker-Dev'
+    dbName:`${process.env.DATABASE}`
  });
 
 //Models
@@ -23,4 +27,4 @@ app.use('/api', require('./src/routes'));
 
 
 
-app.listen(3001);
+app.listen(process.env.PORT || 3001);
