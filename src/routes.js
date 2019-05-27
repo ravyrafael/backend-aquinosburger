@@ -6,5 +6,7 @@ const ObjectController = require('./controllers/ObjectController');
 
 //Rotas
 routes.get('/objects',ObjectController.index);
-
+routes.get('/object/:id',ObjectController.detail);
+routes.delete('/object/:id',ObjectController.delete);
+routes.post('/object',ObjectController.store);
  module.exports = routes;

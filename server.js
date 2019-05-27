@@ -4,11 +4,13 @@ const mongoose = require('mongoose');
 
 //Iniciando app
 const app = express();
+app.use(express.json());
 
 //Iniciando Banco de dados
 mongoose.connect(
     'mongodb+srv://Deploy:ekariuber321@personal-tracker-wlmph.mongodb.net/test?retryWrites=true'
-,{ useNewUrlParser: true,
+,{ 
+    useNewUrlParser: true,
     dbName:'Personal-Tracker-Dev'
  });
 
