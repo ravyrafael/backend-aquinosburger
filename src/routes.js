@@ -1,15 +1,10 @@
 const express = require('express');
 
 const routes = express.Router();
+
+const ObjectController = require('./controllers/ObjectController');
+
 //Rotas
-routes.get('/',(req, res)=>{
-    Object.create({
-        tittle:"Minoxidil",
-        description:"Compra 1",
-        trackcode:"1",
- 
-    })
-     return res.send('Hello');
- });
+routes.get('/objects',ObjectController.index);
 
  module.exports = routes;

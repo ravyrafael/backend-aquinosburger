@@ -14,7 +14,7 @@ mongoose.connect(
 
 //Models
 requireDir('./src/models');
-const Object = mongoose.model('Object')
+
 
 app.use('/api', require('./src/routes'));
 
