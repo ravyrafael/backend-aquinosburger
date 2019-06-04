@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate');
+
 
 const ObjectSchema = new mongoose.Schema({
-    tittle:{
+    title:{
         type:String,
         required:true
     },
@@ -18,5 +20,7 @@ const ObjectSchema = new mongoose.Schema({
         default:Date.now
     }
 })
+
+ObjectSchema.plugin(mongoosePaginate);
 
 mongoose.model('Object', ObjectSchema)
