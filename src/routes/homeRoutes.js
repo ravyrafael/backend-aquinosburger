@@ -2,7 +2,6 @@ const express = require('express');
 
 const routes = express.Router();
 
-const ObjectController = require('../controllers/ObjectController');
 const HomeController = require('../controllers/HomeController');
 //Rotas
 
