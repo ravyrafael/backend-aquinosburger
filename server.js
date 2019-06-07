@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 
-//Iniciando app
+//Iniciando o app
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -37,4 +37,4 @@ app.use((err, req, res) => {
 });
 
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT); 
