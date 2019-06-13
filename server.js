@@ -6,9 +6,9 @@ const express = require('express');
 const requireDir = require('require-dir');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const h = require('./src/helper/defaultHelper');
 
-
-//Iniciando app
+//Iniciando o app
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -36,5 +36,6 @@ app.use((err, req, res) => {
     res.status(err.status || 500).json({ err: err.message });
 });
 
+app.listen(process.env.PORT); 
 
-app.listen(process.env.PORT);
+h.lprint("Servidor iniciado em http://localhost:3001");

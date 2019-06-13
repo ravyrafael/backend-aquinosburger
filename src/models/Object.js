@@ -14,11 +14,9 @@ const ObjectSchema = new mongoose.Schema({
     trackcode:{
         type:String,
         required:true
-    },
-    createdAt:{
-        type:Date,
-        default:Date.now
     }
+}, {
+    timestamps:true
 })
 
 ObjectSchema.plugin(mongoosePaginate);
